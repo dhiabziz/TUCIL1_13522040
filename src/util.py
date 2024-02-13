@@ -25,7 +25,10 @@ def tulistxt(point, seq, step, duration):
         print("\nYuk masukkan nama file!\nContoh: solusi.txt")
         nama_file = input("Ketik nama file: ")
         with open(nama_file, "w") as file:
-            file.write(str(point) + "\n" + arr_to_string(seq) + "\n" + steptoparagraph(step) + "\n" + str(duration) + "s")
+            if(point== 0):
+                file.write(str(point) + "\n" + str(duration) + " s")
+            else:
+                file.write(str(point) + "\n" + arr_to_string(seq) + "\n" + steptoparagraph(step) + "\n" + str(duration) + " s")
 
         print("\nFile berhasil dibuat!")
     else:

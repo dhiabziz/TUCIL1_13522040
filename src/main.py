@@ -161,14 +161,14 @@ if (opsi == 1):
 
     if(final_points == 0):
         print("Maaf ya ternyata gaada solusinya hehe")
-        print("\nDurasi: %s s" %str(duration))
+        print(final_points)
+        print("\n%s s\n" %str(duration))
 
     else:
-        print("Point maksimum:", final_points)
-        print("Buffer optimum:", arr_to_string(final_seq))
-        print("Jalur: ")
+        print(final_points)
+        print(arr_to_string(final_seq))
         print_final_l_loc() 
-        print("\nDurasi: %s s" %str(duration))
+        print("\n%s s\n" %str(duration))
     
     tulistxt(final_points, final_seq, final_l_loc, duration)
 
@@ -255,13 +255,13 @@ elif (opsi == 2):
 
     if(final_points == 0):
         print("Maaf ya ternyata gaada solusinya hehe")
-        print("\nDurasi: %s s" %str(durasi))
+        print(final_points)
+        print("\n%s s\n" %str(durasi))
     else:
-        print("Point maksimum:", final_points)
-        print("Buffer optimum:", arr_to_string(final_seq))
-        print("Jalur: ")
+        print(final_points)
+        print(arr_to_string(final_seq))
         print_final_l_loc() 
-        print("\nDurasi: %s s" %str(durasi))
+        print("\n%s s\n" %str(durasi))
 
     tulistxt(final_points, final_seq, final_l_loc, durasi)
 
