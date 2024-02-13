@@ -52,8 +52,7 @@ def solver(matrix, h, w, temp_seq, max_buffer, temp_l_loc, string_seq, l_points,
                 final_seq.extend(temp_seq)
                 final_l_loc.clear()
                 final_l_loc.extend(temp_l_loc)
-                #print("points: ",final_points)
-                #print("final seq", final_seq)
+
                 if (final_points == max_points):
                     done = True
         else:
@@ -68,35 +67,27 @@ def solver(matrix, h, w, temp_seq, max_buffer, temp_l_loc, string_seq, l_points,
                     temp_l_loc.append(new_loc)
                     temp_seq.append(matrix[new_loc[0]][new_loc[1]])
                     matrix[new_loc[0]][new_loc[1]] = '??'
-                    #print("Matriks: ", matrix)
-                    #print("Temp seq: ", temp_seq)
-                    #print("Temp l loc", temp_l_loc)
+                    
                     solver(matrix, h, w, temp_seq, max_buffer, temp_l_loc, string_seq, l_points, new_loc, True)
                     matrix[temp_l_loc[len(temp_l_loc)-1][0]][temp_l_loc[len(temp_l_loc)-1][1]]= temp_seq[len(temp_seq)-1]
                     temp_seq.pop(len(temp_seq) - 1)
                     temp_l_loc.pop(len(temp_l_loc) - 1)
-                    #print("Matriks: ", matrix)
-                    #print("Temp seq: ", temp_seq)
-                    #print("Temp l loc", temp_l_loc)
+                    
             else:
                 for i in range (h):
                     new_loc = [0,0]
                     new_loc[0] = curr_loc[0]
                     new_loc[1] = curr_loc[1]                    
                     new_loc[0] = i
-                    #print("New loc", new_loc)
+                    
                     if(matrix[new_loc[0]][new_loc[1]] == '??'):
                         continue
                     temp_l_loc.append(new_loc)
                     temp_seq.append(matrix[new_loc[0]][new_loc[1]])
                     matrix[new_loc[0]][new_loc[1]] = '??'
-                    #print("Matriks: ", matrix)
-                    #print("Temp seq: ", temp_seq)
-                    #print("Temp l loc", temp_l_loc)
+                    
                     solver(matrix, h, w, temp_seq, max_buffer, temp_l_loc, string_seq, l_points, new_loc, False)
-                    #print("Matriks: ", matrix)
-                    #print("Temp seq: ", temp_seq)
-                    #print("Temp l loc", temp_l_loc)
+                    
                     matrix[temp_l_loc[len(temp_l_loc)-1][0]][temp_l_loc[len(temp_l_loc)-1][1]]= temp_seq[len(temp_seq)-1]
                     temp_seq.pop(len(temp_seq) - 1)
                     temp_l_loc.pop(len(temp_l_loc) - 1)
