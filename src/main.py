@@ -1,5 +1,6 @@
 import random
 from util import *
+import time
 
 # Variabel Global
 final_seq = []
@@ -154,15 +155,20 @@ if (opsi == 1):
 
     buffer_size, w, h, m, stringseq, l_points = bacafile(path)
 
+    start = time.process_time()
     solver(m, h, w, [], buffer_size, [], stringseq, l_points, [0,0], False)
+    duration = time.process_time() - start
 
     if(final_points == 0):
         print("Maaf ya ternyata gaada solusinya hehe")
+        print("\nDurasi: %s s" %str(duration))
+
     else:
         print("Point maksimum:", final_points)
         print("Buffer optimum:", arr_to_string(final_seq))
         print("Jalur: ")
         print_final_l_loc() 
+        print("\nDurasi: %s s" %str(duration))
 
     
 elif (opsi == 2):
@@ -180,8 +186,6 @@ elif (opsi == 2):
     print(l_token)
 
     # Membuat matriks
-    w = 3
-    h = 3
     k = 0
     matrix = []
     for i in range(h):
@@ -195,11 +199,6 @@ elif (opsi == 2):
     print("\n[MATRIKS PERMAINAN]")
     printmatrix(matrix)
 
-    #Membuat sekuens sebanyak n_seq
-    #Minimal dua token, maksimal nmaxseq token
-    #Hapus
-    n_seq = 3
-    n_max_seq = 4
     
     isUnique = False
     while (not isUnique): 
@@ -248,15 +247,19 @@ elif (opsi == 2):
 
     print("Oke! Saatnya memulai permainan!\n")    
     
+    mulai = time.process_time()
     solver(matrix, h, w, [], ukuran_buffer, [], stringseq, l_points, [0,0], False)
+    durasi = time.process_time() - mulai
 
     if(final_points == 0):
         print("Maaf ya ternyata gaada solusinya hehe")
+        print("\nDurasi: %s s" %str(durasi))
     else:
         print("Point maksimum:", final_points)
         print("Buffer optimum:", arr_to_string(final_seq))
         print("Jalur: ")
         print_final_l_loc() 
+        print("\nDurasi: %s s" %str(durasi))
 
 
 
