@@ -169,6 +169,8 @@ if (opsi == 1):
         print("Jalur: ")
         print_final_l_loc() 
         print("\nDurasi: %s s" %str(duration))
+    
+    tulistxt(final_points, final_seq, final_l_loc, duration)
 
     
 elif (opsi == 2):
@@ -261,6 +263,7 @@ elif (opsi == 2):
         print_final_l_loc() 
         print("\nDurasi: %s s" %str(durasi))
 
+    tulistxt(final_points, final_seq, final_l_loc, durasi)
 
 
 
